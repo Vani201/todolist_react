@@ -14,7 +14,27 @@ function App() {
       {
         id:1,
         checked:true,
-        item:"Learning"
+        item:"Learning NodeJS"
+      },
+      {
+        id:2,
+        checked:false,
+        item:"Practicing React"
+      },
+      {
+        id:3,
+        checked:false,
+        item:"ExpressJS"
+      },
+      {
+        id:4,
+        checked:true,
+        item:"MongoDB"
+      },
+      {
+        id:5,
+        checked:true,
+        item:"HTML, CSS, JS"
       }
      
     ]);
