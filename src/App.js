@@ -10,8 +10,14 @@ import SearchItem from "./SearchItem";
 function App() {
 
   const [items, setItems]= useState(
-    JSON.parse(localStorage.getItem('to_do_list'))
-);
+    [
+      {
+        id:1,
+        checked:true,
+        item:"Learning"
+      }
+     
+    ]);
 
 const [newItem, setNewItem]= useState('');
 
@@ -33,7 +39,7 @@ const handleCheck=(id) =>{
 
 
 const deleteItem= (id)=> {
-    const listItems= items.filter((item)=> item.id!==id)
+    const listItems= (items.filter((item)=> item.id!==id))
     setItems(listItems)
     localStorage.setItem("to_do_list", JSON.stringify(listItems))
 }
@@ -62,8 +68,9 @@ const handleSubmit= (e) =>{
         setSearch = {setSearch}
       />
       <Content 
-        items={items.filter(item =>
-         ((item.item).toLowerCase()).includes(search.toLowerCase()))} 
+        items={ items.filter(item =>
+            ((item.item).toLowerCase()).includes(search.toLowerCase()))
+        }
         handleCheck={handleCheck}
         deleteItem={deleteItem}
       />
